@@ -1,0 +1,2 @@
+class UserVocab < ApplicationRecord
+end

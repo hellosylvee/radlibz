@@ -1,0 +1,2 @@
+class WordAssociation < ApplicationRecord
+end
