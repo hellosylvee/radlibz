@@ -1,8 +1,5 @@
-<h1>This is a <%= @madlib.title %> Madlib </h1>
+<h1>This is a Madlib</h1>
 
-<h3>Fill-in appropriate words according to type of word.</h3>
+<h2><%= @madlib.title %></h2>
 
-<%= form_for @madlib do |f| %>
-<%= f.label :word %>
-<%= f.submit %>
-<% end %>
+<p><%= @madlib.content %></p>
