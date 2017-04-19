@@ -1,7 +1,8 @@
 class User < ApplicationRecord
+  has_many :user_vocabs
+  has_many :madlibs, through: :user_vocabs
   has_many :user_words
   has_many :words, through: :user_words
-  # has_many :madlibs, through: :user_vocabs
 
   def adjectives
     self.words.where(type_id: 1)

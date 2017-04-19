@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419143602) do
+ActiveRecord::Schema.define(version: 20170419224158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "madlib_types", force: :cascade do |t|
+    t.integer  "madlib_id"
+    t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "madlibs", force: :cascade do |t|
     t.string   "title"
@@ -31,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170419143602) do
   end
 
   create_table "user_vocabs", force: :cascade do |t|
-    t.string   "type"
     t.integer  "user_id"
     t.integer  "madlib_id"
     t.datetime "created_at", null: false
@@ -41,8 +47,9 @@ ActiveRecord::Schema.define(version: 20170419143602) do
   create_table "user_words", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "word_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_vocab_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,13 +57,6 @@ ActiveRecord::Schema.define(version: 20170419143602) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "word_associations", force: :cascade do |t|
-    t.integer  "user_vocab_id"
-    t.integer  "word_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "words", force: :cascade do |t|

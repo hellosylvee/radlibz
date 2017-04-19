@@ -1,3 +1,24 @@
-<h1><%= @madlib.title %></h1>
 
 <h3>Please fill-in words.</h3>
+
+<%= form_for @word do |f| %>
+<%= f.label :word_1 %>
+Adjective
+<%= text_field_tag :'words[]' %><br>
+
+<%= f.label :word_2 %>
+Noun
+<%= text_field_tag :'words[]' %><br>
+
+<%= f.label :word_3 %>
+Verb
+<%= text_field_tag :'words[]' %><br>
+
+<!-- params: {
+  word: {
+    words: [word_1, word_2, word_3]
+  }
+} -->
+
+<%= f.submit %>
+<% end %>
