@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418173052) do
+ActiveRecord::Schema.define(version: 20170419143602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,23 @@ ActiveRecord::Schema.define(version: 20170418173052) do
     t.text     "description"
   end
 
+  create_table "types", force: :cascade do |t|
+    t.string   "word_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_vocabs", force: :cascade do |t|
     t.string   "type"
     t.integer  "user_id"
     t.integer  "madlib_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_words", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +63,7 @@ ActiveRecord::Schema.define(version: 20170418173052) do
     t.string   "word"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "type_id"
   end
 
 end

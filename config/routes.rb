@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :madlibs, except: :destroy
   resources :words, only: [:index]
-  resources :user_vocabs, except: [:update, :destroy]
+  # resources :user_vocabs, except: [:update, :destroy]
 
   get '/login', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'

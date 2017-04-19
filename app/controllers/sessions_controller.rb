@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
     user = User.find_by(id: session[:user_id])
     if user.present?
       session[:user_id] = user.id
-      redirect_to user_path
+      redirect_to user_path(user)
     elsif
       user = User.create(name: params[:name], password: params[:password])
       session[:user_id] = user.id
-      redirect_to user_path
+      redirect_to user_path(user)
     else
       render 'new'
     end

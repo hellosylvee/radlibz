@@ -2,21 +2,21 @@
 
 <h3>Enter words here.</h3>
 
-<%= form_for @user_vocab, :url => madlib_path do |f| %>
+<%= form_for @user_vocab do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %><br>
+<%= f.text_field :type %><br>
 
 <%= f.label :adjective %>
-<%= f.text_field :adjective %><br>
+<%= f.text_field :type %><br>
 
 <%= f.label :pronoun %>
-<%= f.text_field :pronoun %><br>
+<%= f.text_field :type %><br>
 
 <%= f.label :action_verb %>
-<%= f.text_field :action_verb %><br>
+<%= f.text_field :type %><br>
 
 <%= f.label :noun %>
-<%= f.text_field :noun %><br>
+<%= f.text_field :type %><br>
 
 <%= f.submit %>
 <% end %>

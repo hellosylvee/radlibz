@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Type.create(word_type: 'adjective')
+Type.create(word_type: 'noun')
+Type.create(word_type: 'name')
+Type.create(word_type: 'verb')
+Type.create(word_type: 'action verb')
