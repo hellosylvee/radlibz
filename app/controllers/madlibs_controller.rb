@@ -12,6 +12,6 @@ class MadlibsController < ApplicationController
   end
 
   def create
-    
+
   end
 end

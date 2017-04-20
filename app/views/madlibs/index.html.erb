@@ -2,8 +2,9 @@
 
 <ul>
   <% @madlibs.each do |madlib| %>
+
     <li>
-      <p>Title: <%= link_to madlib.title, new_user_vocab_path %></p>
+      <p>Title: <%= link_to madlib.title, new_madlib_user_vocab_path(madlib) %></p>
       <p>Description: <%= madlib.description %></p>
     </li><br>
   <% end %>

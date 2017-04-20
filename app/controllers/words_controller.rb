@@ -10,9 +10,8 @@ class WordsController < ApplicationController
 
   def create
     # Takes these words and save them to the database
-    byebug
     session[:words] = params[:words]
-    @words = 
+    @words =
     @word = Word.find_or_create_by(words_params)
     # Associate the words with that user, through the user_words table
     @word.users << current_user

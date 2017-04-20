@@ -24,9 +24,6 @@ class UserVocabsController < ApplicationController
       redirect_to madlib_path( @user_vocab.madlib_id )
     else
       redirect_to "/madlibs/#{flash[:madlib_id]}/user_vocabs/new"
-      # @user_vocab = UserVocab.new( user_id: session[:user_id], madlib_id: params[:madlib_id] )
-      # @madlib_types = @user_vocab.madlib.set_types
-      # render :new
       flash.keep
     end
   end
