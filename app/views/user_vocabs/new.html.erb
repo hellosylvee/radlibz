@@ -7,6 +7,6 @@
     <%= label_tag :"user_words[words][]", "Word #{type.word_type}" %>
     <%= text_field_tag :"user_words[words][]" %>
   <% end %>
-
+  <%= hidden_field_tag(:madlib_id, @user_vocab.madlib.id) %>
 <button class="btn waves-effect waves-light" type="submit" name="action"><%= f.submit 'Submit Words' %></button>
 <% end %>
