@@ -8,10 +8,10 @@ class MadlibsController < ApplicationController
   end
 
   def show
+    @user_vocab = UserVocab.find(flash[:user_vocab])
     @madlib = Madlib.find(params[:id])
   end
 
   def create
-
   end
 end

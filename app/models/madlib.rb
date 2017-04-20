@@ -13,8 +13,12 @@ class Madlib < ApplicationRecord
     self.types = types
   end
 
-  def replace_types(user_vocab)
+  def replace_types(user_vocab) #object of an user_vocab instance
     vocab = user_vocab.words.map { |word| word.word }
-    blanks = self.content.gsub(/(\(.+?\))/, vocab)
+    string = self.content.dup
+
+    filled_in_content = vocab.each_with_object(string) do |word,string|
+      string.sub!( /(\(.+?\))/, word )
+    end
   end
 end

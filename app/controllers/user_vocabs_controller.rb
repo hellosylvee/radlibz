@@ -8,11 +8,19 @@ class UserVocabsController < ApplicationController
   def create
     word_strings = params[:user_words][:words]
     type_strings = params[:user_words][:word_types]
+    @user = User.find( session[:user_id] )
+
+    # @words = word_strings.map.with_index do |word, index|
+    #   type_instance = Type.find_by(word_type: type_strings[index])
+    #   @user.words.create( word: word, type: type_instance )
+    # end
+
     words_hash = Hash[word_strings.zip(type_strings)]
     @words = words_hash.each_with_object([]) do |(word, type),array|
       type_object = Type.find_by( word_type: type )
       array << Word.find_or_create_by( word: word, type: type_object )
     end
+
     @user = User.find( session[:user_id] )
     @user_words = @words.map do |word|
       UserWord.create( user_id: @user.id, word_id: word.id)
@@ -21,6 +29,7 @@ class UserVocabsController < ApplicationController
     @user_vocab.user_id = session[:user_id]
     @user_vocab.madlib_id = flash[:madlib_id]
     if @user_vocab.save
+      flash[:user_vocab] = @user_vocab.id
       redirect_to madlib_path( @user_vocab.madlib_id )
     else
       redirect_to "/madlibs/#{flash[:madlib_id]}/user_vocabs/new"
