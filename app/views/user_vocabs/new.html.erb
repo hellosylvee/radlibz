@@ -1,22 +1,12 @@
 <h1>New Madlib Generator</h1>
 
 <h3>Enter words here.</h3>
-
 <%= form_for @user_vocab do |f| %>
-<%= f.label :name %>
-<%= f.text_field :type %><br>
-
-<%= f.label :adjective %>
-<%= f.text_field :type %><br>
-
-<%= f.label :pronoun %>
-<%= f.text_field :type %><br>
-
-<%= f.label :action_verb %>
-<%= f.text_field :type %><br>
-
-<%= f.label :noun %>
-<%= f.text_field :type %><br>
+  <% @madlib_types.each do |type| %>
+    <%= hidden_field_tag :'user_words[word_types][]', type.word_type %>
+    <%= label_tag :"user_words[words][]", "Word #{type.word_type}" %>
+    <%= text_field_tag :"user_words[words][]" %>
+  <% end %>
 
 <%= f.submit %>
 <% end %>

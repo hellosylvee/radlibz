@@ -1,4 +1,5 @@
 class Word < ApplicationRecord
-  belongs_to :user_word
+  has_many :user_words
+  has_many :users, through: :user_words
   belongs_to :type
 end
