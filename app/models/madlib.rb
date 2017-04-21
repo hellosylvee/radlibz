@@ -11,6 +11,7 @@ class Madlib < ApplicationRecord
       Type.find_or_create_by( word_type: type_string )
     end
     self.types = types
+
   end
 
   def replace_types(user_vocab) #object of an user_vocab instance
