@@ -16,4 +16,9 @@ class SessionsController < ApplicationController
       redirect_to '/login' #user exists, but password is wrong
     end
   end
+
+  def destroy
+    session.clear
+    redirect_to '/login'
+  end
 end
