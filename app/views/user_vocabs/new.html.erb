@@ -4,7 +4,7 @@
 <%= form_for @user_vocab do |f| %>
   <% @madlib_types.each do |type| %>
     <%= hidden_field_tag :'user_words[word_types][]', type.word_type %>
-    <%= label_tag :"user_words[words][]", "Word #{type.word_type}" %>
+    <%= label_tag :"user_words[words][]", "#{type.word_type}" %>
     <%= text_field_tag :"user_words[words][]" %>
   <% end %>
   <%= hidden_field_tag(:madlib_id, @user_vocab.madlib.id) %>
