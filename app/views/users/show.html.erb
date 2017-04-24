@@ -1,14 +1,18 @@
 <h1><%= @user.name %>'s Madlibs</h1>
 
-<%= link_to 'Go to Madlibs and create a new!', madlibs_path %>
-<ol>
+<button class="waves-effect waves-light btn white-text"><%= link_to 'Create a radlib!', madlibs_path %></button>
+<br></br>
+<h4>Your Radlibs</h4>
+<p>You can view all your past radlibs here.</p>
+<ul class="collection">
   <% @user.user_vocabs.each do |uv| %>
     <% madlib = uv.madlib %>
-    <li><%= link_to madlib.title, madlib_user_vocab_path(madlib, uv) %></li>
+    <li class="collection-item"><%= link_to madlib.title, madlib_user_vocab_path(madlib, uv) %></li>
   <% end %>
-</ol>
-
-<h5> <%= @user.name %>'s Words'</h5>
+</ul>
+<br></br>
+<h4>Your Words</h4>
+<p>Here are all the words that you used.</p>
 <ul>
   <% @user.words.each do |word| %>
     <li><%= word.word %></li>

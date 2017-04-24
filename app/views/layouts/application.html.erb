@@ -3,7 +3,7 @@
   <head>
     <title>Radlibz</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', '<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,11 +12,10 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="/login" class="brand-logo">Radlibz</a>
+        <a href="/login" class="brand-logo lpm">Radlibz</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><%= link_to "About", info_path %></li>
           <li><a href="https://github.com/hellosylvee/radlibz" target="_blank">Github</a></li>
-          <!-- <li><a href="">Log out</a></li> -->
           <li><%= link_to "Log Out", destroy_session_path, method:"delete" %></li>
         </ul>
       </div>

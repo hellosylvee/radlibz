@@ -1,9 +1,11 @@
 @import "materialize";
+@import "users";
 
 nav {
   background-color: #F50057;
-  a {
-    font-family: 'Luckiest Guy'
+  a.brand-logo {
+    font-family: 'Luckiest Guy';
+    padding-left: 20px;
   }
 }
 
@@ -11,4 +13,24 @@ img.logo {
   display: block;
   width: 50%;
   margin: 3.5em auto;
+}
+
+img.profile-img {
+  border-radius: 400px;
+  border: solid #F50057 5px;
+}
+
+h5 {
+  color: #003120;
+}
+
+button .white-text {
+  a {
+    color: #FFFFFF;
+  }
+}
+
+.row.center-align {
+  margin: auto 0;
+  text-align: center;
 }
