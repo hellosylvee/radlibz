@@ -6,11 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Type.create(word_type: 'adjective')
-Type.create(word_type: 'noun')
-Type.create(word_type: 'name')
-Type.create(word_type: 'verb')
-Type.create(word_type: 'action verb')
+Madlib.create(title: 'A Flatiron Student', category: 'School', content: "When a student arrives on their first day of school, they are (adjective) to learn to code.  It's a (adjective) environment for everyone, but friends can be made pretty (adverb). (Flatiron instructor name) is our (adjective) instructor, who loves tiny (plural noun). (Flatiron student name) is a very (adjective) person who likes to (verb) a lot. In just one, (adjective) day, we've turned from strangers to (adjective) friends.", description: 'A story of a flatiron student')
 
 Madlib.create(title: 'Vacations', category: 'Funny', content: 'A vacation is when you take a trip to some (adjective) place with your (adjective) family. Usually you go to some place that is near a/an (noun) or up on a/an (noun). A good vacation place is one where you can ride (plural noun) or play (game) or go hunting for (plural noun) . I like to spend my time (verb ending in ing) or (verb ending in ing). When parents go on a vacation, they spend their time eating three (plural noun) a day, and fathers play golf, and mothers sit around (verb ending in ing). Last summer, my little brother fell in a/an (noun) and got poison (plant) all over his (part of the body). My family is going to go to [the] (place), and I will practice (verb ending in ING). Parents need vacations more than kids because parents are always very (adjective) and because they have to work (number) hours every day all year making enough (plural noun) to pay for the vacation.', description: 'A vacation story')
 

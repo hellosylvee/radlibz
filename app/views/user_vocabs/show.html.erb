@@ -1,5 +1,7 @@
-<h2><%= @madlib.title %></h2>
+<br></br>
+<div class="container">
+  <h4><%= @madlib.title %></h4>
+  <h5 class="madlib-text"><%= @madlib.replace_types(@user_vocab) %></h5><br></br>
 
-<p><%= @madlib.replace_types(@user_vocab) %></p>
-
-<%= link_to 'Return to home page', user_path(@user) %>
+  <%= link_to 'Return to home page', user_path(@user) %>
+</div>

@@ -14,7 +14,7 @@ class UserVocabsController < ApplicationController
 
     @user_words = word_strings.map.with_index do |word, index|
       type_instance = Type.find_by(word_type: type_strings[index])
-      word = Word.find_or_create_by(word: word, type: type_instance)
+      word = Word.create(word: word, type: type_instance) 
       UserWord.create(user: @user, user_vocab: @user_vocab, word: word)
       # @user.words.find_or_create_by( word: word, type: type_instance )
     end
