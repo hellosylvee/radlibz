@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-button .waves-effect {
-  color: #FFFFFF;
+button .waves-effect .waves-light .btn .white-text {
+  a {
+    color: #FFFFFF;  
+  }
 }
