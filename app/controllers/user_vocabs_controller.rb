@@ -48,5 +48,6 @@ class UserVocabsController < ApplicationController
   def show
     @madlib = Madlib.find(params[:madlib_id])
     @user_vocab = UserVocab.find(params[:id])
+    @user = User.find( session[:user_id] )
   end
 end
